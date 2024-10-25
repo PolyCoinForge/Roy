@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RoyBatty Coin - ROY</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            color: #f5f5f5;
+        /* Ensure the whole page and content stays centered */
+        html, body {
+            height: 100%;
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-image: url('RoyBG.png'); /* Set your background image */
             background-size: cover;
+            position: relative;
             overflow: hidden;
-            position: relative; /* Required for children elements to position relative to body */
         }
+
         .rain-overlay {
             position: fixed;
             top: 0;
@@ -22,38 +29,45 @@
             width: 100%;
             height: 100%;
             background: url('https://cdn.pixabay.com/animation/2024/10/14/18/57/18-57-03-87_512.gif') repeat;
-            z-index: 1; /* Higher z-index than background, lower than content */
-            pointer-events: none; /* Allows users to click through the GIF */
+            z-index: 1; /* Layer behind content, but above background */
+            opacity: 0.5;
+            pointer-events: none; /* Allows users to interact with other content */
         }
+
         .content {
             position: relative;
             z-index: 2; /* Keeps content above GIF overlay */
-            padding-top: 50px;
-        }
-        .black-box {
-            background-color: rgba(0, 0, 0, 0.8); /* Black with slight transparency */
-            padding: 15px;
-            border-radius: 10px;
-            color: #ffffff; /* White text for contrast */
-            display: inline-block;
-            margin: 20px auto;
-            max-width: 80%; /* Limits width so it looks good on smaller screens */
             text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Add a transparent background for better text visibility */
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            margin: auto;
         }
+
         h1 {
             font-size: 3em;
             margin-bottom: 0.5em;
         }
+
         img {
             width: 200px;
             height: auto;
             border-radius: 50%;
             margin-top: 20px;
         }
-        p {
-                font-size: 1.2em;
-                margin: 20px 0;
-            }
+
+        .black-box {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            color: #ffffff;
+            display: inline-block;
+            margin: 20px auto;
+            max-width: 80%;
+            text-align: center;
+        }
+
         .buy-btn {
             padding: 10px 20px;
             font-size: 1.2em;
@@ -63,9 +77,17 @@
             cursor: pointer;
             border-radius: 5px;
             text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
         }
+
         .buy-btn:hover {
             background-color: #e60000;
+        }
+
+        /* Reset common issues */
+        * {
+            box-sizing: border-box;
         }
     </style>
 </head>
@@ -74,8 +96,8 @@
     <div class="content">
         <h1>$ROY</h1>
         <img src="Roy.png" alt="RoyBatty Coin Logo">
-        <p class="black-box">The star that burns twice as bright burns half as long. RoyBatty Coin is here for a powerful, short-lived journey. Join the burn!</p>
-        <a href="https://pumpfun.io/path-to-your-token" class="buy-btn">Buy ROY on Pumpfun</a>
+        <p class="black-box">The star that burns twice as bright burns half as long. Roy is here for a powerful, action packed journey. Join the burn!</p>
+        <a href="https://pumpfun.io/path-to-your-token" class="buy-btn">Buy $ROY on Pumpfun</a>
     </div>
 </body>
 </html>
